@@ -1,0 +1,28 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/joriss/Downloads/AtherosE2200Ethernet-master/build/Debug/AtherosE2200Ethernet.kext/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/joriss/Downloads/AtherosE2200Ethernet-master/build/Debug/AtherosE2200Ethernet.kext/Contents/Modules/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/joriss/Downloads/AtherosE2200Ethernet-master/build/Debug/AtherosE2200Ethernet.kext/family",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "AtherosE2200Ethernet-Swift.h",
+          'external-contents': "/Users/joriss/Downloads/AtherosE2200Ethernet-master/build/Debug/System/Library/Frameworks/Kernel.framework/Contents/Headers/family/AtherosE2200Ethernet-Swift.h"
+        }
+      ]
+    }
+  ]
+}

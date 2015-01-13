@@ -1,0 +1,1 @@
+ const unsigned char AtherosE2200EthernetVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:AtherosE2200Ethernet  PROJECT:AtherosE2200Ethernet-1.0.5" "\n"; const double AtherosE2200EthernetVersionNumber __attribute__ ((used)) = (double)1.0;
