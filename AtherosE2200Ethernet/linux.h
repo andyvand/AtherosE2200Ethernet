@@ -206,6 +206,7 @@ _OSReadInt8((base), (byteOffset))
 #define alx_read_mem16(hw, reg)            OSReadLittleInt16((hw->hw_addr), (reg))
 #define alx_read_mem32(hw, reg)            OSReadLittleInt32((hw->hw_addr), (reg))
 #define alx_post_write(hw)        OSReadLittleInt32((hw->hw_addr), 0)
+#define alx_write_config16(hw, reg, val16)  hw->pdev-> (hw->pdev, reg, val);
 
 #define wmb() OSSynchronizeIO()
 

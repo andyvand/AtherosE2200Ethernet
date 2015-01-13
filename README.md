@@ -4,7 +4,7 @@ AtherosE2200Ethernet
 Qualcomm Atheros Killer E2200 driver for OS X
 
 Key Features of the Driver
-  - Supports Qualcomm Atheros AR816x, AR817x and Killer E220x.
+  - Supports Qualcomm Atheros AR813x, AR815x, AR816x, AR817x and Killer E220x.
   - Support for multisegment packets relieving the network stack of unnecessary copy operations when assembling packets for transmission.
   - No-copy receive and transmit. Only small packets are copied on reception because creating a copy is more efficient than allocating a new buffer.
   - TCP, UDP and IPv4 checksum offload (receive and transmit).
@@ -18,9 +18,6 @@ Key Features of the Driver
 
 Known Issues
   - A user reported that his BIOS (Toshiba) left the NIC disabled so that the driver refuses to load. This problem also affects ALXEthernet.kext and any known linux driver for the supported chips. As of now there is no fix. You'll have to contact your BIOS vendor for a solution in case you are affected.
-
-FAQ
-  - Could you add support for AR813x and AR815x? Sorry, no, because I used a different linux driver as the code base than Shailua which doesn't support these chips so that it would be too much work to add support for them.
 
 Installation
   1. Goto /S/L/E and delete ALXEthernet.kext.
@@ -44,6 +41,8 @@ Troubleshooting
   - Keep in mind that there are many manufacturers of network equipment. Although Ethernet is an IEEE standard, different implementations may show different behavior causing incompatibilities. In case you are having trouble try a different switch or a different cable.
 
 Changelog
+  - Version 1.0.5 (2014-01-13)
+    - Added other ethernet adapters.
   - Version 1.0.0 (2014-09-22)
     - Final release.
   - Version 1.0.0d7 (2014-08-18)

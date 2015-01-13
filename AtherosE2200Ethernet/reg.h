@@ -35,11 +35,19 @@
 #ifndef ALX_REG_H
 #define ALX_REG_H
 
+#define ALX_DEV_ID_AR8131               0x1063
+#define ALX_DEV_ID_AR8132               0x1062
+#define ALX_DEV_ID_AR8151_V1            0x1073
+#define ALX_DEV_ID_AR8151_V2            0x1083
+#define ALX_DEV_ID_AR8152_V1            0x2060
+#define ALX_DEV_ID_AR8152_V2            0x2062
 #define ALX_DEV_ID_AR8161				0x1091
-#define ALX_DEV_ID_E2200				0xe091
 #define ALX_DEV_ID_AR8162				0x1090
 #define ALX_DEV_ID_AR8171				0x10A1
 #define ALX_DEV_ID_AR8172				0x10A0
+#define ALX_DEV_ID_E2200				0xe091
+
+#define ALX_REV_ID_AR8152_V2_0          0xc0
 
 /* rev definition,
  * bit(0): with xD support

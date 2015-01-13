@@ -484,11 +484,9 @@ struct alx_hw {
 	u8 __iomem *hw_addr;
 
 #if DISABLED_CODE
-
 	/* current & permanent mac addr */
 	u8 mac_addr[ETH_ALEN];
 	u8 perm_addr[ETH_ALEN];
-
 #endif  /* DISABLED_CODE */
     
 	u16 mtu;
@@ -500,9 +498,7 @@ struct alx_hw {
 	u32 rx_ctrl;
     
 #if DISABLED_CODE
-    
-	u32 mc_hash[2];
-
+    u32 mc_hash[2];
 #endif  /* DISABLED_CODE */
     
 	u32 smb_timer;
@@ -517,16 +513,19 @@ struct alx_hw {
     u32 sleep_ctrl;
 
 #if DISABLED_CODE
-
 	spinlock_t mdio_lock;
-    
 #endif  /* DISABLED_CODE */
 
 	struct mdio_if_info mdio;
 	u16 phy_id[2];
+    u32 flags;
 
 	/* PHY link patch flag */
 	bool lnk_patch;
+    bool aps_en;
+    bool long_cable;
+    bool hi_txperf;
+    bool msi_lnkpatch;
 
 	/* cumulated stats from the hardware (registers are cleared on read) */
 	struct alx_hw_stats stats;

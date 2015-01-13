@@ -2,43 +2,284 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIconFile</key>
-	<string></string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.insanelymac.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
-	<key>CFBundlePackageType</key>
-	<string>KEXT</string>
-	<key>CFBundleShortVersionString</key>
-	<string>$MODULE_VERSION</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
+	<key>OSBundleLibraries</key>
+	<dict>
+		<key>com.apple.kpi.bsd</key>
+		<string>9.0.0</string>
+		<key>com.apple.kpi.libkern</key>
+		<string>9.0.0</string>
+		<key>com.apple.kpi.mach</key>
+		<string>9.0.0</string>
+		<key>com.apple.iokit.IOPCIFamily</key>
+		<string>1.0.0b1</string>
+		<key>com.apple.kpi.iokit</key>
+		<string>9.0.0</string>
+		<key>com.apple.iokit.IONetworkingFamily</key>
+		<string>1.0.0b1</string>
+	</dict>
 	<key>CFBundleVersion</key>
 	<string>$MODULE_VERSION</string>
+	<key>OSBundleRequired</key>
+	<string>Network-Root</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Atheros AR813X/AR815X/AR816X/AR817X/E2200 Network Driver $MODULE_VERSION, $NSHumanReadableCopyright</string>
+	<key>CFBundleSignature</key>
+	<string>ATHX</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>AtherosE2200</key>
+		<key>Atheros AR8131</key>
 		<dict>
-			<key>CFBundleIdentifier</key>
-			<string>com.insanelymac.${PRODUCT_NAME:rfc1034identifier}</string>
-			<key>IOClass</key>
-			<string>AtherosE2200</string>
-			<key>IOProviderClass</key>
-			<string>IOPCIDevice</string>
 			<key>IOProbeScore</key>
 			<integer>1000</integer>
+			<key>CFBundleIdentifier</key>
+			<string>com.insanelymac.${PRODUCT_NAME:rfc1034identifier}</string>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+			<key>IOClass</key>
+			<string>AtherosE2200</string>
+			<key>enableTSO6</key>
+			<true/>
 			<key>IOPCIMatch</key>
-			<string>0x10901969 0x10911969 0x10A01969 0x10A11969 0xE0911969</string>
+			<string>0x10631969</string>
 			<key>enableTSO4</key>
 			<true/>
+			<key>enableCSO6</key>
+			<true/>
+			<key>maxIntrRate</key>
+			<integer>5000</integer>
+			<key>Driver_Version</key>
+			<string>$MODULE_VERSION</string>
+		</dict>
+		<key>Atheros AR8132</key>
+		<dict>
+			<key>IOProbeScore</key>
+			<integer>1000</integer>
+			<key>CFBundleIdentifier</key>
+			<string>com.insanelymac.${PRODUCT_NAME:rfc1034identifier}</string>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+			<key>IOClass</key>
+			<string>AtherosE2200</string>
 			<key>enableTSO6</key>
+			<true/>
+			<key>IOPCIMatch</key>
+			<string>0x10621969</string>
+			<key>enableTSO4</key>
+			<true/>
+			<key>enableCSO6</key>
+			<true/>
+			<key>maxIntrRate</key>
+			<integer>5000</integer>
+			<key>Driver_Version</key>
+			<string>$MODULE_VERSION</string>
+		</dict>
+		<key>Atheros AR8151 V1</key>
+		<dict>
+			<key>IOProbeScore</key>
+			<integer>1000</integer>
+			<key>CFBundleIdentifier</key>
+			<string>com.insanelymac.${PRODUCT_NAME:rfc1034identifier}</string>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+			<key>IOClass</key>
+			<string>AtherosE2200</string>
+			<key>enableTSO6</key>
+			<true/>
+			<key>IOPCIMatch</key>
+			<string>0x10731969</string>
+			<key>enableTSO4</key>
+			<true/>
+			<key>enableCSO6</key>
+			<true/>
+			<key>maxIntrRate</key>
+			<integer>5000</integer>
+			<key>Driver_Version</key>
+			<string>$MODULE_VERSION</string>
+		</dict>
+		<key>Atheros AR8152 V2</key>
+		<dict>
+			<key>IOProbeScore</key>
+			<integer>1000</integer>
+			<key>CFBundleIdentifier</key>
+			<string>com.insanelymac.${PRODUCT_NAME:rfc1034identifier}</string>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+			<key>IOClass</key>
+			<string>AtherosE2200</string>
+			<key>enableTSO6</key>
+			<true/>
+			<key>IOPCIMatch</key>
+			<string>0x20621969</string>
+			<key>enableTSO4</key>
+			<true/>
+			<key>enableCSO6</key>
+			<true/>
+			<key>maxIntrRate</key>
+			<integer>5000</integer>
+			<key>Driver_Version</key>
+			<string>$MODULE_VERSION</string>
+		</dict>
+		<key>Atheros AR8161</key>
+		<dict>
+			<key>IOProbeScore</key>
+			<integer>1000</integer>
+			<key>CFBundleIdentifier</key>
+			<string>com.insanelymac.${PRODUCT_NAME:rfc1034identifier}</string>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+			<key>IOClass</key>
+			<string>AtherosE2200</string>
+			<key>enableTSO6</key>
+			<true/>
+			<key>IOPCIMatch</key>
+			<string>0x10911969</string>
+			<key>enableTSO4</key>
+			<true/>
+			<key>enableCSO6</key>
+			<true/>
+			<key>maxIntrRate</key>
+			<integer>5000</integer>
+			<key>Driver_Version</key>
+			<string>$MODULE_VERSION</string>
+		</dict>
+		<key>Atheros AR8162</key>
+		<dict>
+			<key>IOProbeScore</key>
+			<integer>1000</integer>
+			<key>CFBundleIdentifier</key>
+			<string>com.insanelymac.${PRODUCT_NAME:rfc1034identifier}</string>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+			<key>IOClass</key>
+			<string>AtherosE2200</string>
+			<key>enableTSO6</key>
+			<true/>
+			<key>IOPCIMatch</key>
+			<string>0x10901969</string>
+			<key>enableTSO4</key>
+			<true/>
+			<key>enableCSO6</key>
+			<true/>
+			<key>maxIntrRate</key>
+			<integer>5000</integer>
+			<key>Driver_Version</key>
+			<string>$MODULE_VERSION</string>
+		</dict>
+		<key>Atheros AR8151 V2</key>
+		<dict>
+			<key>IOProbeScore</key>
+			<integer>1000</integer>
+			<key>CFBundleIdentifier</key>
+			<string>com.insanelymac.${PRODUCT_NAME:rfc1034identifier}</string>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+			<key>IOClass</key>
+			<string>AtherosE2200</string>
+			<key>enableTSO6</key>
+			<true/>
+			<key>IOPCIMatch</key>
+			<string>0x10831969</string>
+			<key>enableTSO4</key>
+			<true/>
+			<key>enableCSO6</key>
+			<true/>
+			<key>maxIntrRate</key>
+			<integer>5000</integer>
+			<key>Driver_Version</key>
+			<string>$MODULE_VERSION</string>
+		</dict>
+		<key>Atheros AR8152 V1</key>
+		<dict>
+			<key>IOProbeScore</key>
+			<integer>1000</integer>
+			<key>CFBundleIdentifier</key>
+			<string>com.insanelymac.${PRODUCT_NAME:rfc1034identifier}</string>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+			<key>IOClass</key>
+			<string>AtherosE2200</string>
+			<key>enableTSO6</key>
+			<true/>
+			<key>IOPCIMatch</key>
+			<string>0x20601969</string>
+			<key>enableTSO4</key>
+			<true/>
+			<key>enableCSO6</key>
+			<true/>
+			<key>maxIntrRate</key>
+			<integer>5000</integer>
+			<key>Driver_Version</key>
+			<string>$MODULE_VERSION</string>
+		</dict>
+		<key>Atheros E2200</key>
+		<dict>
+			<key>IOProbeScore</key>
+			<integer>1000</integer>
+			<key>CFBundleIdentifier</key>
+			<string>com.insanelymac.${PRODUCT_NAME:rfc1034identifier}</string>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+			<key>IOClass</key>
+			<string>AtherosE2200</string>
+			<key>enableTSO6</key>
+			<true/>
+			<key>IOPCIMatch</key>
+			<string>0xE0911969</string>
+			<key>enableTSO4</key>
+			<true/>
+			<key>enableCSO6</key>
+			<true/>
+			<key>maxIntrRate</key>
+			<integer>5000</integer>
+			<key>Driver_Version</key>
+			<string>$MODULE_VERSION</string>
+		</dict>
+		<key>Atheros AR8171</key>
+		<dict>
+			<key>IOProbeScore</key>
+			<integer>1000</integer>
+			<key>CFBundleIdentifier</key>
+			<string>com.insanelymac.${PRODUCT_NAME:rfc1034identifier}</string>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+			<key>IOClass</key>
+			<string>AtherosE2200</string>
+			<key>enableTSO6</key>
+			<true/>
+			<key>IOPCIMatch</key>
+			<string>0x10A11969</string>
+			<key>enableTSO4</key>
+			<true/>
+			<key>enableCSO6</key>
+			<true/>
+			<key>maxIntrRate</key>
+			<integer>5000</integer>
+			<key>Driver_Version</key>
+			<string>$MODULE_VERSION</string>
+		</dict>
+		<key>Atheros AR8172</key>
+		<dict>
+			<key>IOProbeScore</key>
+			<integer>1000</integer>
+			<key>CFBundleIdentifier</key>
+			<string>com.insanelymac.${PRODUCT_NAME:rfc1034identifier}</string>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+			<key>IOClass</key>
+			<string>AtherosE2200</string>
+			<key>enableTSO6</key>
+			<true/>
+			<key>IOPCIMatch</key>
+			<string>0x10A01969</string>
+			<key>enableTSO4</key>
 			<true/>
 			<key>enableCSO6</key>
 			<true/>
@@ -48,24 +289,13 @@
 			<string>$MODULE_VERSION</string>
 		</dict>
 	</dict>
+	<key>CFBundlePackageType</key>
+	<string>KEXT</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2014 Laura Müller. All rights reserved.</string>
-	<key>OSBundleLibraries</key>
-	<dict>
-		<key>com.apple.iokit.IONetworkingFamily</key>
-		<string>1.5.0</string>
-		<key>com.apple.iokit.IOPCIFamily</key>
-		<string>1.7</string>
-		<key>com.apple.kpi.bsd</key>
-		<string>8.10.0</string>
-		<key>com.apple.kpi.iokit</key>
-		<string>8.10.0</string>
-		<key>com.apple.kpi.libkern</key>
-		<string>8.10.0</string>
-		<key>com.apple.kpi.mach</key>
-		<string>8.10.0</string>
-	</dict>
-	<key>OSBundleRequired</key>
-	<string>Network-Root</string>
+	<string>Copyright © 2014 Laura Müller. All rights reserved, Copyright © 2015 AnV Software.</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$MODULE_VERSION</string>
 </dict>
 </plist>

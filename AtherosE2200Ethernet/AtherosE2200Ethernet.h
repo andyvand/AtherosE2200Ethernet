@@ -20,6 +20,7 @@
 
 #include "reg.h"
 #include "hw.h"
+#include "alc_hw.h"
 
 #ifdef DEBUG
 #define DebugLog(args...) IOLog(args)
@@ -68,6 +69,13 @@ enum {
 
 enum {
     kChipUnkown = 0,
+    kChipAR8131,
+    kChipAR8132,
+    kChipAR8151V1,
+    kChipAR8151V2,
+    kChipAR8152V1,
+    kChipAR8152V2_0,
+    kChipAR8152V2_1,
     kChipAR8161,
     kChipAR8162,
     kChipAR8171,
@@ -220,10 +228,8 @@ enum
 #define kDriverVersionName "Driver_Version"
 #define kNameLenght 64
 
-
 class AtherosE2200 : public super
 {
-	
 	OSDeclareDefaultStructors(AtherosE2200)
 	
 public:
@@ -378,7 +384,8 @@ private:
     bool enableTSO4;
     bool enableTSO6;
     bool enableCSO6;
-    
+    bool isALC;
+
     /* mbuf_t arrays */
     mbuf_t txMbufArray[kNumTxDesc];
     mbuf_t rxMbufArray[kNumRxDesc];
